@@ -1,17 +1,21 @@
 import React from "react";
+import Card from "../UI/Card";
+import classes from "./AddUsers.module.css";
 
 const AddUsers = (props) => {
   const addUserHandler = (e) => {
     e.preventDefault();
   };
   return (
-    <form onSubmit={addUserHandler}>
-      <label htmlFor="username">Username</label>
-      <input type="text" id="username" />
-      <label htmlFor="age">Age (years)</label>
-      <input type="number" id="age" />
-      <button type="submit">Add Users</button>
-    </form>
+    <Card className={classes.input}>
+      <form onSubmit={addUserHandler}>
+        <label htmlFor="username">Username</label>
+        <input type="text" id="username" />
+        <label htmlFor="age">Age (years)</label>
+        <input type="number" id="age" />
+        <button type="submit">Add Users</button>
+      </form>
+    </Card>
   );
 };
 
