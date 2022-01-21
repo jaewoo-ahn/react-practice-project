@@ -7,6 +7,7 @@ const AddUsers = (props) => {
   const [enteredUserName, setEnterdUserName] = useState("");
   const [enteredUserAge, setEnterdUserAge] = useState("");
   const addUserHandler = (e) => {
+    e.preventDefault();
     if (
       enteredUserName.trim().length === 0 ||
       enteredUserAge.trim().length === 0
@@ -16,8 +17,8 @@ const AddUsers = (props) => {
     if (+enteredUserAge < 1) {
       return;
     }
-    e.preventDefault();
-    console.log(enteredUserName, enteredUserAge);
+
+    props.onAddUser(enteredUserName, enteredUserAge);
     setEnterdUserName("");
     setEnterdUserAge("");
   };
